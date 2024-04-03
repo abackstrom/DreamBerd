@@ -1,0 +1,6 @@
+function login (username, _password) => {
+    return passwd[username] == _password;
+}
+
+login( "Lu", "******" )! // correct password, login suceeds
+login( "Lu", "*******" )! // bad password (hacking attempt)

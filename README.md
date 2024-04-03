@@ -274,6 +274,19 @@ functi power (a, b) => a ^ b!
 union inverse (a) => 1/a!
 ```
 
+### Sensitive function parameters
+
+If a parameter is sensitive, you can start it with an underscore. This lets you specify the parameter using asterisks, which is more secure.
+
+```java
+function login (username, _password) => {
+    return passwd[username] == _password;
+}
+
+login( "Lu", "******" )! // correct password, login succeeds
+login( "Lu", "*******" )! // bad password (hacking attempt)
+```
+
 ## Dividing by Zero
 
 Dividing by zero returns `undefined`.
